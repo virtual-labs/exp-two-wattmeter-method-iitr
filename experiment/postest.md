@@ -30,9 +30,9 @@ B   Series</br>
 C   Either series or parallel</br>
 D   Neither series nor parallel</br>
 
-Q5. A wattmeter is connected as shown in the figure. The wattmeter reads
+Q5. A wattmeter is connected as shown in the figure. The wattmeter reads-:
 
-<img src="images/posttest1.png"> 
+![](images/posttest1.png)
 
 A   Zero always</br>
 B   Total power consumed by Z1 and Z2</br>
