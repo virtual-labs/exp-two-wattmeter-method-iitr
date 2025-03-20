@@ -3,12 +3,18 @@
 <div align="justify" style= "font-size:18px;"  >
 
 In a three phase system load can be connected in star or delta having impedance per phase as:<br>
+<center>
 
-<center>$ Zph=Rph+jXph=|Z|< Φ  $</center>
+$Z_{ph} = R_{ph} + jX_{ph} = |Z| \angle \Phi$
+
+</center>
 
 The reactance X can be positive or negative depending on the capacitive or inductive load. The wattmeter must be connected properly in the three-phase system to connect power. Here, ∠Φ= angle between Vph and Iph. For any load, delta or star connected three phase power is given by:
 
- <center> $ P= \sqrt 3V_{L}I_LcosΦ = 3V_{ph}I_{ph}cosΦ  $ </center>
+ <center> 
+
+$ P = \sqrt{3} V_L I_L \cos\Phi = 3 V_{ph} I_{ph} \cos\Phi$
+ </center>
 
 Where, cosΦ is called the power factor. For resistive load, cosΦ=1<br>
 
@@ -16,7 +22,10 @@ The wattmeter must be connected properly in the three-phase system to connect po
 
 If W<sub>1</sub> and W<sub>2</sub> are the two wattmeters reading then total power is,<br>
 
-<center> $ W = W_1 + W_2 = 3Φ  $ </center>
+<center> 
+
+$ W = W_1 + W_2 = 3\Phi$
+</center>
 
 The circuit may be taken as balanced or unbalanced one, balanced type being only a special case.<br>
 
@@ -27,36 +36,59 @@ If star connected circuit is taken as an example as shown in figure 1 <br>
 
 So, the total instantaneous power consumed in the circuit is,<br> 
 
-<center> $ W = I_{RN}⋅V_{RN} + I_{YN}⋅V_{YN} + I_{BN}⋅V_{BN}…….(1) $ </center>
+<center> 
+
+$ W = I_{RN} \cdot V_{RN} + I_{YN} \cdot V_{YN} + I_{BN} \cdot V_{BN} \quad \text{........(1)} $
+
+</center>
 
 Each of the terms in the above expression equation (1) is the instantaneous power consumed by the phases. Consider star connected balanced load as shown From the connection diagram, the circuit in and the voltages across the respective (current, pressure or voltage) coils in the wattmeter, W<sub>1</sub> are I<sub>RN</sub> and V<sub>RY</sub> = V<sub>RN</sub> - V<sub>YN</sub>.
 <br>
 
 So, the instantaneous power measured by the wattmeter W<sub>1</sub> is<br>
 
-<center> $ W_1 = I_{RN}⋅V_{RY} = I_{RN}⋅(V_{RN}−V_{YN}) $ </center>
+<center> 
+
+$ W_1 = I_{RN} \cdot V_{RY} = I_{RN} \cdot (V_{RN} - V_{YN})
+) $ 
+
+</center>
 
 Similarly, the instantaneous power measured by the wattmeter W<sub>2</sub> is<br> 
 
-<center> $ W_2 = I_{BN}⋅V_{BY} = I_{BN}⋅(V_{BN}−V_{YN})  $ </center>
+<center>
+
+$ W_2 = I_{BN} \cdot V_{BY} = I_{BN} \cdot (V_{BN} - V_{YN})$
+
+</center>
 
 Hence the total power is
+<center>
+$ W = W_1 + W_2 = I_{RN} \cdot (V_{RN} - V_{YN}) + I_{BN} \cdot (V_{BN} - V_{YN})$
 
-<center> $ W = W_1 + W_2 = I_{RN}⋅(V_{RN}−V_{YN}) + I_{BN}⋅(V_{BN}−V_{YN}) $ </center>
+$W = I_{RN} \cdot V_{RN} - I_{RN} \cdot V_{YN} + I_{BN} \cdot V_{RN} - I_{BN} \cdot V_{YN}$
 
-<center> $ W = I_{RN}⋅V_{RN} − I_{RN}.V_{YN} + I_{BN}⋅V_{RN} − I_{BN}.V_{YN} $ </center>
+$W = I_{RN} \cdot V_{RN} + I_{BN} \cdot V_{RN} - V_{YN} \cdot (I_{RN} + I_{BN})$
 
-<center> $ W= I_{RN}⋅V_{RN} + I_{BN}⋅V_{RN} − V_{YN}. (I_{RN} + I_{BN})$ </center>
+</center>
 
 And since,
 
-<center> $ I_{RN}+ I_{BN} + I_{YN} = 0 $ </center>
+<center>
+
+$I_{RN} + I_{BN} + I_{YN} = 0 $
+
+</center>
 
 So,
 
-<center> $ W_1 + W_2 = I_{RN}⋅V_{RN} + I_{BN}⋅V_{BN} + I_{YN}.V_{YN}  $ </center>
+<center>
 
-<center> $ W_1 + W_2 = P_1 + P_2 + P_3 $ </center>
+$ W_1 + W_2 = I_{RN} \cdot V_{RN} + I_{BN} \cdot V_{BN} + I_{YN} \cdot V_{YN}$
+
+$ W_1 + W_2 = P_1 + P_2 + P_3$
+
+</center>
 
 Where P<sub>1</sub>, P<sub>2</sub> and P<sub>3</sub> are the instantaneous values of power consumed by each phase of the load at the instant considered regardless of power factor. Hence at any instant, addition of two wattmeter reading always gives instantaneous total power consumed by the circuit.<br>
 
@@ -68,28 +100,37 @@ Consider delta connected balanced load as shown in the figure 2,<br>
 
 From the connection diagram, the circuit in and the voltages across the respective (current, pressure or voltage) coils in the wattmeter, W<sub>1</sub> are V<sub>RB</sub>   and I<sub>R</sub> = I<sub>1</sub> – I<sub>3</sub>. So, the instantaneous power measured by the wattmeter W<sub>1</sub> is
 
-<center> $ W_1 = I_R⋅V_{RB} = V_{RB}⋅(I_1−I_3) $ </center>
+<center>
+
+$ W_1 = I_R \cdot V_{RB} = V_{RB} \cdot (I_1 - I_3)$
+
+</center>
 
 Similarly, the instantaneous power measured by the wattmeter W<sub>2</sub> is 
 
-<center> $ W_2 = I_Y⋅V_{YB} = V_{YB}⋅(I_2−I_1)  $ </center>
+<center>
+
+$ W_2 = I_Y \cdot V_{YB} = V_{YB} \cdot (I_2 - I_1)$
+
+</center>
 
 Hence, The total power is
 
-<center> $ W = W_1 + W_2 = V_{RB}⋅(I_1−I_3) + V_{YB}⋅(I_2−I_1)  $ </center>
+<center>
 
-<center> $ W = V_{RB}⋅I_1 − V_{RB}.I_3 + V_{YB}⋅I_2 − V_{YB}.I_1 $ </center>
+$W = W_1 + W_2 = V_{RB} \cdot (I_1 - I_3) + V_{YB} \cdot (I_2 - I_1)$
 
-<center> $ W = V_{YB}⋅I_2 + V_{BR}.I_3 − I_1(V_{YB} + V_{BR}) $ </center>
+$W = V_{RB} \cdot I_1 - V_{RB} \cdot I_3 + V_{YB} \cdot I_2 - V_{YB} \cdot I_1$
 
-And since
-<center> $ V_{RY} + V_{YB} + V_{BR} = 0 $ </center>
+$W = V_{YB} \cdot I_2 + V_{BR} \cdot I_3 - I_1(V_{YB} + V_{BR})$
 
-So
+$V_{RY} + V_{YB} + V_{BR} = 0$
 
-<center> $ W_1 + W_2 = I_1⋅V_{RY} + I_2⋅V_{YB} + I_3.V_{BR} $ </center>
+$W_1 + W_2 = I_1 \cdot V_{RY} + I_2 \cdot V_{YB} + I_3 \cdot V_{BR}$
 
-<center> $ W_1 + W_2 = P_1 + P_2 + P_3 $ </center>
+$W_1 + W_2 = P_1 + P_2 + P_3$
+
+</center>
 
 Hence, at any instant, addition of two wattmeter reading always gives instantaneous total power consumed by the circuit.
 

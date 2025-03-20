@@ -24,7 +24,7 @@ var Watt_2_M = document.getElementById("m_w2")
 var Watt_2_C = document.getElementById("c_w2")
 
 var MCB_Red = document.getElementById("mcb_r")
-var MCB_Yel = document.getElementById("mcb_b")
+var MCB_Yel = document.getElementById("mcb_b")  // FOR YELLOW NODE
 var MCB_Blu = document.getElementById("mcb_y")
 
 var A0 = document.getElementById("r_start")
@@ -65,7 +65,7 @@ var s6 = document.getElementById("s6")
 var flags5 = 0
 var flags4 = 0
 
-var config_nodes = [A0, A1, B0, B1, C0, C1] //read only
+var config_nodes = [A0, A1, B0, B1, C0, C1] 
 
 var WV1 = Watt_1_V
 var WL1 = Watt_1_L
@@ -103,6 +103,10 @@ instance.bind("ready", function () {
             paintStyle: { stroke: "rgb(229, 97, 97)", strokeWidth: 2.5 },
             hoverPaintStyle: { stroke: "rgb(229, 97, 97)", strokeWidth: 2.5 }
         },
+        "yellow": {
+            paintStyle: { stroke: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+            hoverPaintStyle: { stroke: "rgb(229, 97, 97)", strokeWidth: 2.5 }
+        },
 
         "blue0": {
             paintStyle: { stroke: "blue", strokeWidth: 2.5 },
@@ -135,21 +139,22 @@ instance.bind("ready", function () {
         isSource: true,
         isTarget: true,
         connectionsDetachable: true,
-        connectionType: "blue0",
-        paintStyle: { fill: "blue", strokeWidth: 2.5 },
-        maxConnections: 10
-    })
-
-    instance.addEndpoint([MCB_Yel], {
-        endpoint: "Dot",
-        anchor: ["Center"],
-        isSource: true,
-        isTarget: true,
-        connectionsDetachable: true,
         connectionType: "yellow0",
         paintStyle: { fill: "yellow", strokeWidth: 2.5 },
         maxConnections: 10
     })
+
+    instance.addEndpoint([MCB_Yel], {
+      endpoint: "Dot",
+      anchor: ["Center"],
+      isSource: true,
+      isTarget: true,
+      connectionsDetachable: true,
+      connectionType: "blue0",
+      paintStyle: { fill: "blue", strokeWidth: 2.5 },
+      maxConnections: 10,
+      connector: ["StateMachine", { curviness: -40 }],
+    });
 
     instance.addEndpoint([AmmeterPositive, VoltmeterPositive], {
         endpoint: "Dot",
@@ -162,7 +167,21 @@ instance.bind("ready", function () {
         maxConnections: 10
     })
 
-    instance.addEndpoint([VoltmeterNegative, Watt_1_L, Watt_1_V, Watt_2_M, Watt_2_C, Watt_2_L], {
+
+
+    instance.addEndpoint([Watt_2_M, Watt_2_C], {
+      endpoint: "Dot",
+      anchor: ["Center"],
+      isSource: true,
+      isTarget: true,
+      connectionsDetachable: true,
+      connectionType: "red",
+      paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+      maxConnections: 10,
+      connector: ["StateMachine", { curviness: 10 }],
+    });
+
+    instance.addEndpoint([VoltmeterNegative, Watt_1_L, Watt_1_V, Watt_2_L], {
         endpoint: "Dot",
         anchor: ["Center"],
         isSource: true,
@@ -194,7 +213,7 @@ instance.bind("ready", function () {
         connectionType: "red",
         paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
         maxConnections: 10,
-        connector: ["StateMachine", { curviness: -50 }]
+        connector: ["StateMachine", { curviness: -90 }]
     })
 
     instance.addEndpoint([Watt_2_V], {
@@ -222,10 +241,10 @@ instance.bind("ready", function () {
 
 })
 
-window.onload = function setPage() {
+ window.onload = function setPage() {
     instance.connect({ source: VoltmeterNegative, target: VoltmeterPositive })
-    instance.deleteEveryConnection()
-}
+    instance.deleteEveryConnection();
+ }
 
 if ((instance.getConnections({ source: AmmeterNegative, target: Watt_2_C })[0] != undefined) || (instance.getConnections({ source: Watt_2_C, target: AmmeterNegative })[0] != undefined)) {
     if ((instance.getConnections({ source: AmmeterNegative, target: Watt_2_M })[0] != undefined) || (instance.getConnections({ source: Watt_2_M, target: AmmeterNegative })[0] != undefined)) {
@@ -259,7 +278,7 @@ function numOfConnections(node) { //counts total number of connections to and fr
 
     let MyCounter = 0;
 
-    MyCounter = (instance.getConnections({ source: node }).length + instance.getConnections({ target: node }).length)
+    MyCounter = (instance.getConnections({ source: node }).length + instance.getConnections({ target: node }).length);
 
     return MyCounter;
 }
@@ -482,30 +501,171 @@ function check_permutations() {
 }
 
 check.onclick = function giveResult() {
+
     if (check_permutations()) {
+
         if (check_basic_loads() && check_delta()) {
-            window.alert("Valid connections, Loads are in DELTA configuration")
-            connArrnagment = 1
-            MCB.disabled = false
+
+            window.alert("Valid connections, Loads are in DELTA configuration");
+
+             document.getElementById('p_v').style.pointerEvents='none';  
+             document.getElementById('n_v').style.pointerEvents='none';  
+             document.getElementById('p_a').style.pointerEvents='none';  
+             document.getElementById('n_a').style.pointerEvents='none';  
+             document.getElementById('v_w1').style.pointerEvents='none';  
+             document.getElementById('l_w1').style.pointerEvents='none';  
+             document.getElementById('m_w1').style.pointerEvents='none';  
+             document.getElementById('c_w1').style.pointerEvents='none';  
+             document.getElementById('v_w2').style.pointerEvents='none';  
+             document.getElementById('l_w2').style.pointerEvents='none';  
+             document.getElementById('m_w2').style.pointerEvents='none';  
+             document.getElementById('c_w2').style.pointerEvents='none';  
+             document.getElementById('mcb_r').style.pointerEvents='none';  
+             document.getElementById('mcb_b').style.pointerEvents='none';  
+             document.getElementById('mcb_y').style.pointerEvents='none';  
+             document.getElementById('r_start').style.pointerEvents='none'; 
+              document.getElementById('r_end').style.pointerEvents='none';  
+              document.getElementById('y_start').style.pointerEvents='none';  
+              document.getElementById('y_end').style.pointerEvents='none';  
+              document.getElementById('b_start').style.pointerEvents='none';  
+              document.getElementById('b_end').style.pointerEvents='none';  
+
+              instance.addEndpoint([MCB_Red], {
+                endpoint: "Dot",
+                anchor: [["Center"]],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red0",
+                paintStyle: { fill: "red", strokeWidth: 2.5 },
+                maxConnections: 0
+            })
+        
+            instance.addEndpoint([MCB_Blu], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "blue0",
+                paintStyle: { fill: "blue", strokeWidth: 2.5 },
+                maxConnections: 0
+            })
+        
+            instance.addEndpoint([MCB_Yel], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget:true,
+                connectionsDetachable: true,
+                connectionType: "yellow0",
+                paintStyle: { fill: "yellow", strokeWidth: 2.5 },
+                maxConnections: 0,
+            })
+        
+            instance.addEndpoint([AmmeterPositive, VoltmeterPositive], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "blue",
+                paintStyle: { fill: "rgb(97,106,229)", strokeWidth: 2.5 },
+                maxConnections: 0
+            })
+        
+            instance.addEndpoint([VoltmeterNegative, Watt_1_L, Watt_1_V, Watt_2_M, Watt_2_C, Watt_2_L], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red",
+                paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+                maxConnections: 0
+            })
+        
+            instance.addEndpoint([Watt_1_C, Watt_1_M], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red",
+                paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+                maxConnections: 0,
+                connector: ["StateMachine", { curviness: -50 }]
+            })
+        
+            instance.addEndpoint([AmmeterNegative], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red",
+                paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+                maxConnections: 0,
+                connector: ["StateMachine", { curviness: -50 }]
+            })
+        
+            instance.addEndpoint([Watt_2_V], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red",
+                paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+                maxConnections: 0
+            })
+        
+            instance.addEndpoint([A1, A0, B1, B0, C1, C0], {
+                endpoint: "Dot",
+                anchor: ["Center"],
+                isSource: true,
+                isTarget: true,
+                connectionsDetachable: true,
+                connectionType: "red",
+                paintStyle: { fill: "rgb(229, 97, 97)", strokeWidth: 2.5 },
+                maxConnections: 0,
+                connector: ["StateMachine", { curviness: 40, proximityLimit: 10 }]
+            })
+
+
+            check.disabled=1;
+            connArrnagment = 1;
+            MCB.disabled = false;
+            MCB.style.pointerEvents='auto';
         }
+
         else if (check_basic_loads() && check_star()) {
-            window.alert("Valid connections, Loads are in STAR configuration")
-            connArrnagment = 2
-            MCB.disabled = false
+
+            window.alert("Valid connections, Loads are in STAR configuration");
+            connArrnagment = 2;
+            MCB.disabled = false;
+            
         }
+
         else {
-            window.alert("Invalid Connections!")
+
+            window.alert("Invalid Connections!");
         }
     }
+
     else if (instance.getAllConnections().length == 0) {
-        window.alert("Please make connections")
+
+        window.alert("Please make the connections");
     }
+
     else {
-        window.alert("Invalid Connections!")
+
+        window.alert("Invalid Connections!");
         window.location.reload();
     }
+
     SpecialNode = undefined;
-    connHistory.push(connArrnagment)
+    connHistory.push(connArrnagment);
 }
 
 reset.onclick = function resetExp() {
@@ -524,7 +684,9 @@ MCB.onclick = function toggle_MCB() {
         VoltageSlider = 0
         trigger()
     }
+
     else if (MCB_state == 0) {
+
         MCB_state = 1;
         MCB_image.src = "images/MCB_ON.png"
         document.getElementById('R-lamp').src = 'images/r_on.png'
@@ -532,14 +694,18 @@ MCB.onclick = function toggle_MCB() {
         document.getElementById('B-lamp').src= 'images/b_on.png'
         MCB.style.transform = "translate(0px, -60px)"
         VoltageSlider = 408
+        MCB.style.pointerEvents='none';
         trigger();
+
     }
 }
 
 function trigger() {
+
     flags5 = 1
     add.disabled = false
     updateMeters();
+
 }
 
 function updateMeters() {
@@ -597,26 +763,27 @@ add.onclick = function addToTable() {
     pow.innerHTML = parseFloat(power1.toFixed(2)) + parseFloat(power2.toFixed(2))
 
     if (connArrnagment == 2) {
-        load.innerHTML = "Star"
+        load.innerHTML = "Star";
     }
     else if (connArrnagment == 1) {
-        load.innerHTML = "Delta"
+        load.innerHTML = "Delta";
     }
 
     if ((connHistory.indexOf(1) >= 0) && (connHistory.indexOf(2) >= 0)) {
-        document.getElementById("verify1").disabled = false
-        document.getElementById("verify2").disabled = false
+        document.getElementById("verify1").disabled = false;
+        document.getElementById("verify2").disabled = false;
     }
 
     VoltageSlider = 0
 
     MCB_state = 0;
     MCB_image.src = "images/MCB_Off.png"
-    document.getElementById('R-lamp').src = 'images/r_off.png'
-    document.getElementById('Y-lamp').src= 'images/y_off.png'
-    document.getElementById('B-lamp').src = 'images/b_off.png'
+    document.getElementById('R-lamp').src = 'images/r_off.png';
+    document.getElementById('Y-lamp').src= 'images/y_off.png';
+    document.getElementById('B-lamp').src = 'images/b_off.png';
+   
 
-    MCB.style.transform = "translate(0px, 0px)"
+    MCB.style.transform = "translate(0px, 0px)";
     trigger()
     add.disabled = true;
     verify1.disabled = false;
@@ -652,70 +819,70 @@ function multiplyDelta() {
     document.getElementById('powDelta').value = myResult.toFixed(2);
 }
 
-function highlight() {
+// function highlight() {
 
-    let conn = instance.getConnections();
+//     let conn = instance.getConnections();
 
-    if (conn.length >= 1) {
+//     if (conn.length >= 1) {
 
-        s1.style.color = "black";
-        s2.style.color = "red";
+//         s1.style.color = "black";
+//         s2.style.color = "red";
 
-    }
+//     }
 
-    if (connInNodes() != 0) {
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "red";
-    }
+//     if (connInNodes() != 0) {
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "red";
+//     }
 
-    if (connArrnagment == 2) {
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "black";
-        s4.style.color = "red";
-    }
+//     if (connArrnagment == 2) {
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "black";
+//         s4.style.color = "red";
+//     }
 
-    if ((flags4 == 1) && (connArrnagment == 2)) {
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "black";
-        s4.style.color = "black";
-        s5.style.color = "red";
-    }
+//     if ((flags4 == 1) && (connArrnagment == 2)) {
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "black";
+//         s4.style.color = "black";
+//         s5.style.color = "red";
+//     }
 
-    if ((flags5 == 1) && connArrnagment == 1) {
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "black";
-        s4.style.color = "black";
-        s5.style.color = "black";
-        s6.style.color = "red";
-    }
+//     if ((flags5 == 1) && connArrnagment == 1) {
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "black";
+//         s4.style.color = "black";
+//         s5.style.color = "black";
+//         s6.style.color = "red";
+//     }
 
-    if (connArrnagment == 1) {
+//     if (connArrnagment == 1) {
 
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "black";
-        s4.style.color = "black";
-        s5.style.color = "black";
-        s6.style.color = "black";
-        s7.style.color = "red";
-    }
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "black";
+//         s4.style.color = "black";
+//         s5.style.color = "black";
+//         s6.style.color = "black";
+//         s7.style.color = "red";
+//     }
 
-    if ((MCB_state == 1) && (connArrnagment == 1)) {
+//     if ((MCB_state == 1) && (connArrnagment == 1)) {
 
-        s1.style.color = "black";
-        s2.style.color = "black";
-        s3.style.color = "black";
-        s4.style.color = "black";
-        s5.style.color = "black";
-        s6.style.color = "black";
-        s7.style.color = "black";
-        s8.style.color = "red";
+//         s1.style.color = "black";
+//         s2.style.color = "black";
+//         s3.style.color = "black";
+//         s4.style.color = "black";
+//         s5.style.color = "black";
+//         s6.style.color = "black";
+//         s7.style.color = "black";
+//         s8.style.color = "red";
         
-    }
-}
+//     }
+// }
 
 window.setInterval(highlight, 100);

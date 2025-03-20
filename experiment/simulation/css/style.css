@@ -414,10 +414,15 @@ img {
     right:37px;
 }
 #mcb_r{
-    right:41px;
+   
+    right:40px;
+
 }
 #mcb_y{
     right:33px;
+}
+#mcb_b {
+    right: 27px;
 }
 #p_v,
 #p_a {

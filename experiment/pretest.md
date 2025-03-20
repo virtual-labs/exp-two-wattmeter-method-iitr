@@ -2,6 +2,8 @@
 
 #### Please attempt the following questions
 
+### Note- Reference books are available in the reference section.
+
 <div align="justify"style=font-size:18px >
 
 Q1. A wattmeter is used to measure _____.
