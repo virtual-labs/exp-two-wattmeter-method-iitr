@@ -2,11 +2,7 @@
 {"question":"The wattmeter method is used to measure power in a three-phase load. The wattmeter readings are 400W and -35W. Calculate the total active power.","answers":{"a":"360","b":"365","c":"370","d":"375"},"correctAnswer":"b"},
 {"question":"The input power to a three-phase load is 10kW at 0.8 Pf. Two wattmeters are connected to measure the power. Find the reading of higher reading wattmeter.","answers":{"a":"7.165","b":"6.165","c":"5.165","d":"4.165"},"correctAnswer":"a"},
 {"question":"The current coils of the two wattmeters are connected in","answers":{"a":"Parallel","b":"Series","c":"Either series or parallel","d":"Neither series nor parallel"},"correctAnswer":"b"},
-
-{"question":"A wattmeter is connected as shown in the figure.The wattmeter reads-<br> <img src='images/posttest1.png'/>",
-"answers":{"a":"Zero always","b":"Total power consumed by Z1 and Z2","c":"Power consumed by Z1","d":"Power consumed by Z2"},
-"correctAnswer":"d"},
-
+{"question":"A wattmeter is connected as shown in the figure. The wattmeter reads","answers":{"a":"Zero always","b":"Total power consumed by Z1 and Z2","c":"Power consumed by Z1","d":"Power consumed by Z2"}, "correctAnswer":"d"},
 {"question":"In the two-wattmeter method of 3ϕ power measurement, if the phase sequence of the supply is reversed:","answers":{"a":"One of the meters will show a negative reading","b":"The meters will not read","c":"There won’t be a change in meter readings","d":"The reading of wattmeters will be interchanged"},"correctAnswer":"d"},
 {"question":"What is the reading (in kW) of both the wattmeter, when measuring the power of a three-phase three-wire system having an input of 5 kW and power factor of 0.866?","answers":{"a":"5, 0","b":"3.33, 1.67","c":"2.5, 2.5","d":"1, 4"},"correctAnswer":"b"},
 {"question":"At which angle in two wattmeter method, one wattmeter shows zero readings","answers":{"a":"Φ = 0°","b":"Φ = 60°","c":"Φ = 90°","d":"Φ = 45°"},"correctAnswer":"b"},

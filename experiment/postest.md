@@ -2,6 +2,8 @@
 
 #### Please attempt the following questions
 
+### Note- Reference books are available in the reference section.
+
 <div align="justify" style=font-size:18px >
 
 Q1. Two wattmeters are sufficient to measure total three-phase power-
@@ -32,7 +34,7 @@ D   Neither series nor parallel</br>
 
 Q5. A wattmeter is connected as shown in the figure. The wattmeter reads-:
 
-![](images/posttest1.png)
+![] posttest1.png
 
 A   Zero always</br>
 B   Total power consumed by Z1 and Z2</br>
