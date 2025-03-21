@@ -21,11 +21,11 @@ To study and measure the power consume by three phase resistive load by two watt
 
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
-1 | Prof. RS Anand | Faculty | Electrical Engineering | IIT Roorkee, Roorkee | anandfee@gmail.com
-2 | Rajeev Kumar | Research Fellow | Electrical Engineering | IIT Roorkee, Roorkee | rajeevkumar.rke@gmail.com
-3 | Nipun Jain | Project Associate | Electrical Engineering | IIT Roorkee, Roorkee | nipunjain1305@gmail.com
-4 | Piyush Rawat | Project Associate | Electrical Engineering | IIT Roorkee, Roorkee | rawatpiyush72@gmail.com
-5 | Rahul Saini | Project Associate | Electrical Engineering | IIT Roorkee, Roorkee | rahul.saini8599@gmail.com
+1 | Prof. RS Anand | Faculty | Electrical Engineering | IIT Roorkee | anandfee@gmail.com
+2 | Rajeev Kumar | Research Fellow | Electrical Engineering | IIT Roorkee | rajeevkumar.rke@gmail.com
+3 | Nipun Jain | Project Associate | Electrical Engineering | IIT Roorkee | nipunjain1305@gmail.com
+4 | Piyush Rawat | Project Associate | Electrical Engineering | IIT Roorkee | rawatpiyush72@gmail.com
+5 | Rahul Saini | Project Associate | Electrical Engineering | IIT Roorkee | rahul.saini8599@gmail.com
 
 <br>
 
