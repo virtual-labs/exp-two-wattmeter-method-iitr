@@ -1,0 +1,41 @@
+
+/home/runner/work/exp-two-wattmeter-method-iitr/exp-two-wattmeter-method-iitr/experiment/simulation/js/function.js
+    6:5    warning  'calculate' is assigned a value but never used  no-unused-vars
+   44:5    warning  'VLStar' is assigned a value but never used     no-unused-vars
+   45:5    warning  'ILStar' is assigned a value but never used     no-unused-vars
+   46:5    warning  'cosStar' is assigned a value but never used    no-unused-vars
+   47:5    warning  'powtar' is assigned a value but never used     no-unused-vars
+   49:5    warning  'VLDelta' is assigned a value but never used    no-unused-vars
+   50:5    warning  'ILDelta' is assigned a value but never used    no-unused-vars
+   51:5    warning  'cosDelta' is assigned a value but never used   no-unused-vars
+   52:5    warning  'powDelta' is assigned a value but never used   no-unused-vars
+   58:5    warning  's1' is assigned a value but never used         no-unused-vars
+   59:5    warning  's2' is assigned a value but never used         no-unused-vars
+   60:5    warning  's3' is assigned a value but never used         no-unused-vars
+   61:5    warning  's4' is assigned a value but never used         no-unused-vars
+   62:5    warning  's5' is assigned a value but never used         no-unused-vars
+   63:5    warning  's6' is assigned a value but never used         no-unused-vars
+   65:5    warning  'flags5' is assigned a value but never used     no-unused-vars
+   66:5    warning  'flags4' is assigned a value but never used     no-unused-vars
+   92:18   warning  'jsPlumb' is not defined                        no-undef
+  262:1    warning  'VALID_CONNECTIONS' is not defined              no-undef
+  451:25   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  454:67   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  454:146  warning  'VALID_CONNECTIONS' is not defined              no-undef
+  460:67   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  460:146  warning  'VALID_CONNECTIONS' is not defined              no-undef
+  466:67   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  466:146  warning  'VALID_CONNECTIONS' is not defined              no-undef
+  473:56   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  473:90   warning  'VALID_CONNECTIONS' is not defined              no-undef
+  473:169  warning  'VALID_CONNECTIONS' is not defined              no-undef
+  473:199  warning  'VALID_CONNECTIONS' is not defined              no-undef
+  789:5    warning  'verify1' is not defined                        no-undef
+  790:5    warning  'verify2' is not defined                        no-undef
+  793:10   warning  'disconnect' is defined but never used          no-unused-vars
+  798:10   warning  'multiplyStar' is defined but never used        no-unused-vars
+  809:10   warning  'multiplyDelta' is defined but never used       no-unused-vars
+  888:20   warning  'highlight' is not defined                      no-undef
+
+✖ 36 problems (0 errors, 36 warnings)
+
