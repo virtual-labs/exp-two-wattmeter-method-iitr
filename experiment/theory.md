@@ -49,8 +49,7 @@ So, the instantaneous power measured by the wattmeter W<sub>1</sub> is<br>
 
 <center> 
 
-$ W_1 = I_{RN} \cdot V_{RY} = I_{RN} \cdot (V_{RN} - V_{YN})
-) $ 
+$ W_1 = I_{RN} \cdot V_{RY} = I_{RN} \cdot (V_{RN} - V_{YN}) $ 
 
 </center>
 
