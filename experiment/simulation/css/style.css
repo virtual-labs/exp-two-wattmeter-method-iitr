@@ -458,25 +458,25 @@ img {
 
 #v_w1,
 #v_w2 {
-    bottom: 70px;
+    bottom: 65px;
     right: 15px;
 }
 
 #l_w1,
 #l_w2 {
-    bottom: 70px;
+     bottom: 65px;
     right: 2px;
 }
 
 #m_w1,
 #m_w2 {
-    bottom: 70px;
+     bottom: 65px;
     left: 11px;
 }
 
 #c_w1,
 #c_w2 {
-    bottom: 70px;
+     bottom: 65px;
     left: 25px;
 }
 
@@ -534,7 +534,7 @@ img {
 #y_start,
 #r_start {
     position: relative;
-    bottom: 39px;
+    bottom: 30px;
     left: 30px;
 
 }
@@ -543,7 +543,7 @@ img {
 #y_end,
 #r_end {
     position: relative;
-    bottom: 39px;
+    bottom: 30px;
     left: 285px;
 
 }

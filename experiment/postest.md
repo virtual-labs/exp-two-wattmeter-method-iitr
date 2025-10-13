@@ -34,8 +34,7 @@ D   Neither series nor parallel</br>
 
 Q5. A wattmeter is connected as shown in the figure. The wattmeter reads-:
 
-![] posttest1.png
-
+![image](images/posttest1.png)<br>
 A   Zero always</br>
 B   Total power consumed by Z1 and Z2</br>
 C   Power consumed by Z1</br>
